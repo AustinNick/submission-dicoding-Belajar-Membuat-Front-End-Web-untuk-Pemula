@@ -1,6 +1,6 @@
 # Submission Aplikasi Pengelolaan Data Menggunakan DOM dan Web Storage
 
-Ini adalah submission saya untuk kelas Belajar Dasar Pemrograman Web dari [dicoding.com](dicoding.com)
+Ini adalah submission saya untuk kelas Belajar Membuat Front-End Web untuk Pemula dari [dicoding.com](dicoding.com)
 
 ## Fitur
 
