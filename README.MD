@@ -8,3 +8,9 @@ Ini adalah submission saya untuk kelas Belajar Dasar Pemrograman Web dari [dicod
 - Menampilkan data buku berdasarkan status baca
 - Menghapus data buku
 - Mencari data buku berdasarkan titel buku
+
+### Techstack yang digunakan
+
+- HTML
+- CSS
+- Javascript
