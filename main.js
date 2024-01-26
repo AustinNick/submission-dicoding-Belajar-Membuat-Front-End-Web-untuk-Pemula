@@ -9,8 +9,10 @@ function loadBook() {
     complShelf.innerHTML = "";
     incomplShelf.innerHTML = "";
 
-    var item = JSON.parse(localStorage.getItem("book"));
+    var item = localStorage.getItem("book");
     if (item) {
+        item = JSON.parse(item);
+
         item.forEach(book => {
             var txtComplete = (book.isComplete) ? "Belum selesai dibaca" : "Selesai dibaca";
             var bookFormat = `
@@ -32,16 +34,12 @@ function loadBook() {
 }
 
 function deleteBrackets(item) {
-    if (item === null || item == undefined) {
+    if (item == null || item == undefined) {
         return;
     }
 
     item = item.replace("[", "");
     item = item.replace("]", "");
-    
-    if (item === null || item == undefined) {
-        return;
-    }
 
     return item;
 }
@@ -52,7 +50,7 @@ function submit() {
     var year = document.getElementById("inputBookYear");
     var complete = document.getElementById("inputBookIsComplete");
 
-    if (title == "" || author == "" || year == "") {
+    if (title.value == "" || author.value == "" || year.value == "") {
         alert("Please fill all the fields");
         return false;
     }
@@ -62,15 +60,18 @@ function submit() {
         id: id,
         title: title.value,
         author: author.value,
-        year: year.value,
+        year: parseInt(year.value),
         isComplete: complete.checked
     }
 
     bookInput = JSON.stringify(bookInput);
     var lastItem = localStorage.getItem("book");
-
     if (lastItem != null) {
-        bookInput += "," + deleteBrackets(lastItem);
+        lastItem = deleteBrackets(lastItem);
+    }
+
+    if (!(lastItem == "" || lastItem == null)) {
+        bookInput += "," + lastItem;
     }
 
     localStorage.setItem("book", `[ ${bookInput} ]`);
