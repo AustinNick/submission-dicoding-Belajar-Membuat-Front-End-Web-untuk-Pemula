@@ -148,3 +148,9 @@ searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     searchBook();
 })
+
+var checkIsComplete = document.getElementById('inputBookIsComplete');
+checkIsComplete.addEventListener('change', () => {
+    var txtComplete = (checkIsComplete.checked) ? "Selesai dibaca" : "Belum selesai dibaca";
+    document.getElementById("txtIsComplete").innerHTML = txtComplete;
+})
