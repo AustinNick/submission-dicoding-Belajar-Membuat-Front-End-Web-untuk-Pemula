@@ -38,7 +38,7 @@ function deleteBrackets(item) {
 
     item = item.replace("[", "");
     item = item.replace("]", "");
-    console.log(item)
+    
     if (item === null || item == undefined) {
         return;
     }
@@ -67,15 +67,13 @@ function submit() {
     }
 
     bookInput = JSON.stringify(bookInput);
-
     var lastItem = localStorage.getItem("book");
-    
+
     if (lastItem != null) {
         bookInput += "," + deleteBrackets(lastItem);
     }
 
     localStorage.setItem("book", `[ ${bookInput} ]`);
-
     loadBook()
 }
 
