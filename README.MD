@@ -4,8 +4,8 @@ Ini adalah submission saya untuk kelas `Belajar Membuat Front-End Web untuk Pemu
 
 ## Fitur
 
-- Menambahkan data buku
 - Menampilkan data buku berdasarkan status baca
+- Menambahkan data buku
 - Menghapus data buku
 - Mencari data buku berdasarkan titel buku
 
